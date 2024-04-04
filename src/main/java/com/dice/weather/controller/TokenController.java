@@ -28,7 +28,7 @@ public class TokenController {
     private  CustomerUserDetailsService customerUserDetailsService;
 
     @PostMapping("/token")
-    public ResponseEntity<String> registerNewCustomer(@RequestBody UserRegistrationRequest registrationRequest) throws Exception {
+    public ResponseEntity<String> generateToken(@RequestBody UserRegistrationRequest registrationRequest) throws Exception {
         try {
             this.authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(registrationRequest.getUsername(), registrationRequest.getPassword()));
 
